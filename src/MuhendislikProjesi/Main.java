@@ -40,7 +40,7 @@ public class Main {
 			int modGecici=0;
 			for(int j=0; j<parcala.length; j++)
 			{
-				toplam = toplam+ parcala[j]*(j+1) * (j+1);
+				toplam = toplam+ parcala[j]*(j+1) * (j+1); //ismin ascii karsiligi bulunuyor.
 			}
 			int mod = toplam%101;
 		
@@ -55,7 +55,7 @@ public class Main {
 			}
 			else
 			{
-				
+			//quadratic mantik ile arayip bos buldugu indise ascii karsiligini yazacak.	
 				for(int k=0; k<100; k++)
 				{
 					modGecici = mod + (k+1)*(k+1) %101;
@@ -74,15 +74,15 @@ public class Main {
 			
 		
 		}
-		/*
-		 * hash dizisini ekrana yazdýrýr..
+		
+		// hash dizisini ekrana yazdýrýr..
 		 
 		for(int z=0; z<hash.length;z++)
 		{
 			System.out.println(z+". indis: "+hash[z]);
 		}
 		
-		*/
+		
 		
 		//Text dosyamýzdaki isimleri okuyup hash dizisine quadratic mantýk ile attýktan sonra 
 		//kullanýcan isim alýp
@@ -184,7 +184,8 @@ public class Main {
 		for(int k=0; k<girilenParca2.length; k++)
 		{	
 			int araToplam=0;
-			//girilen isim gecici bir deðiþkende tutuyoruz.Çünkü girilen isimi kaybetmememiz lazým.
+			//girilen isim gecici bir deðiþkende tutuyoruz.Çünkü girilen isimi kaybetmememiz lazým 
+			//Çünkü her seferde bu kelime üzerinden deðiþiklik yapacaðýz.
 			for(int j=0; j<girilenParca2.length; j++)
 			{
 				geciciTut[j] = girilenParca2[j];
@@ -203,7 +204,7 @@ public class Main {
 				
 				for(int m=0; m<geciciTut.length; m++)
 				{
-					araToplam += geciciTut[m] * (m+1)* (m+1);
+					araToplam += geciciTut[m] * (m+1)* (m+1); //yer degistirilerek aranacak kelimenin ascii karsiligi hesaplaniyor.
 					
 				}
 				araMod = araToplam %101;
@@ -224,7 +225,7 @@ public class Main {
 					
 				}
 				else
-				{
+				{//quadratic mantik ile kelime araniyor.
 					for(int n=0; n<hash2.length; n++)
 					{
 						geciciMod1 = (araMod + (n+1) * (n+1))%101;
@@ -248,13 +249,13 @@ public class Main {
 				}
 				// Kullanýcýnýn girdiði orjinal isimi geri yüklüyoruz.
 				//Çünkü orjinal halinden harf deðiþtiriyoruz.
-				if(true)
+				/*if(true)
 				{
 					for(int l=0 ; l<girilenParca2.length; l++)
 					{
 						geciciTut[l] = girilenParca2[l];
 					}
-				}
+				}*/
 				
 			}
 				
@@ -286,9 +287,9 @@ public class Main {
 				{
 						if(parcaSakla[j] != '0')
 						{
-							eksiltToplam += parcaSakla[j] *(sayac * sayac) ;
+							eksiltToplam += parcaSakla[j] *(sayac * sayac) ; //harfini eksilttiðimiz ismin ascii karþýlýðýný hesaplýyor.
 							sayac++;
-							bulunanDeger +=Character.toString(parcaSakla[j]);
+							bulunanDeger +=Character.toString(parcaSakla[j]); //harfi eksilttiðimiz ismi bulunanDeger adlý deðiþkende tutuyor.
 							
 						}
 				}
